@@ -81,57 +81,63 @@ const handleDurationChange=(e:ChangeEvent<HTMLInputElement>):void =>{
 }
 
 return(
- <div className="flex flex-col items-center justify-center h-screen bg-gray-200 datk:bg-gray-900">
- <div className="bg-gray-900 dark:bg-gray-200 shadow-5g rounded-xl p-10 w-full max-w-md">
-  <div className="flex justify-center mb-2">
-    <img src="https://images.vexels.com/media/users/3/128840/isolated/preview/c091629800ce3d91d8527d32d60bc46f-stopwatch-timer.png" alt="" className="w-20 h-20" />
-  </div>
-  <h1 className="text-3xl font-bold mb-8 text-gray-200 dark:text-gray:900 text-center ">Countdown Timer</h1>
-  <div className="flex items-center mb-8">
-     <Input
-       type="number"
-       id="duration"
-       placeholder="Enter duration in seconds"
-       value={duration}
-       onChange={handleDurationChange}
-       className="flex-1 mr-4 rounded-md dark:border-gray-600 dark:bg-gray-200  text-gray-900 "/>  
-
-       <Button
-          onClick={handleSetDuration}
-          variant="secondary"
-          className="text-gray-900 bg-gray-200 dark:text-gray-900">
-          Set
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-200 dark:bg-gray-900">
+      <div className="bg-gray-900 dark:bg-gray-200 shadow-lg rounded-xl p-10 w-full max-w-md">
+        <div className="flex justify-center mb-2">
+          <img
+            src="https://images.vexels.com/media/users/3/128840/isolated/preview/c091629800ce3d91d8527d32d60bc46f-stopwatch-timer.png"
+            alt=""
+            className="w-30 h-20"
+          />
+        </div>
+        <h1 className="text-3xl font-bold mb-8 text-gray-200 dark:text-gray-900 text-center">
+          Countdown Timer
+        </h1>
+        <div className="flex items-center mb-8">
+          <Input
+            type="number"
+            id="duration"
+            placeholder="Enter duration in seconds"
+            value={duration}
+            onChange={handleDurationChange}
+            className="flex-1 mr-4 rounded-md dark:border-gray-600 dark:bg-gray-200 text-gray-900"
+          />
+          <Button
+            onClick={handleSetDuration}
+            variant="secondary"
+            className="text-gray-900 bg-gray-200 dark:text-gray-900"
+          >
+            Set
           </Button>
-          </div>
-          <div className="text-7xl font-bold text-gray-200 dark:text-gray-900 mb-8 text-center">
+        </div>
+        <div className="text-7xl font-bold text-gray-200 dark:text-gray-900 mb-8 text-center">
           {formatTime(timeleft)}
         </div>
         <div className="flex justify-center gap-7">
-            <Button
+          <Button
             onClick={handleStart}
             variant="secondary"
             className="text-gray-900 bg-gray-200 dark:text-gray-900"
-            >
+          >
             Start
-            </Button>
-            <Button
-             onClick={handlePause}
-             variant="secondary"
-             className="text-gray-900 bg-gray-200 dark:text-gray-900"
-            >
+          </Button>
+          <Button
+            onClick={handlePause}
+            variant="secondary"
+            className="text-gray-900 bg-gray-200 dark:text-gray-900"
+          >
             Pause
-            </Button>
-            <Button
-             onClick={handleReset}
-             variant="secondary"
-             className="text-gray-900 bg-gray-200 dark:text-gray-900"
-            >
+          </Button>
+          <Button
+            onClick={handleReset}
+            variant="secondary"
+            className="text-gray-900 bg-gray-200 dark:text-gray-900"
+          >
             Reset
-            </Button>
+          </Button>
         </div>
- </div>
- </div>
-
-)
+      </div>
+    </div>
+  );
 
 }
